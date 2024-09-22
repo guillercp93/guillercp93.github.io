@@ -1,0 +1,38 @@
+---
+import ExperienciaItem from "./ExperienciaItem.astro";
+
+const experiencias = [
+    {
+        title: "Desarrollador Fullstack",
+        description: `Diseñar e implementar funcionalidades y dar soporte a la aplicación web de gestión de diferentes tipos de solicitudes del tipo de adquisición de bienes y servicios, viajes nacionales o internacionales, cotizaciones, entre otros que manejan las universidades dentro de sus procesos académicos y administrativos.
+Diseñar e implementar una aplicación web que permite la automatización de reportes a partir de diferentes fuentes como base de datos y archivos, a partir de los parámetros dados por el cliente desde la interfaz web y escribiendo los resultados en archivos planos. Con este proceso, se logró una disminución del tiempo en un 75% para la generación de los reportes.
+
+También se participó en la creación de funcionalidades para un sistema de priorización de producción, la cual permite la administración de la planeación de producción de los productos del cliente. Las funcionalidades en que se colaboró fue en el módulo de planeación, de reportes y liberación.
+
+Se diseñó e implementó la aplicación web para una empresa inmobiliaria, en la cual permite la parametrización de diferentes datos (listado de valores fijos, números, textos, cálculos) e ir creando varios registros de cada uno de los inmuebles que tiene a cargo. También se hizo una inclusión para la ejecución de scripts que usa el cliente en sus procesos internos y que hacen uso de los registros creados en la aplicación.
+
+También se hace uso de la herramienta ETL DataStage, para los implementar requerimientos de un cliente en particular. Con esta herramienta, se captura los datos de diferentes fuentes (base de datos, archivos, etc), se hacen transformaciones, aplican filtros, se agrupan, se cruzan, se hacen cálculos sobre esos datos para luego escribir los resultados sobre las bases de datos o archivos que necesitan el cliente para su posterior análisis.`,
+        date: "Dic 2018 - Ago 2024",
+    },
+    {
+        title: "Ingeniero de desarrollo",
+        description: `Como empresa enfocada a dar soluciones de software de gestión, estuve a cargo del diseño e implementación del proyecto de gestión de Proyectos de obra, enfocadas en empresas constructoras. La cual buscaba mejorar la planeación cronologica de los proyectos hasta el uso de insumos necesarios para su posterior ejecución.
+También estuve a cargo del proyecto pedidos configurables, dedicadas a empresas que venden sus productos como un conjunto de servicios o insumos materiales que le dan valor al producto final.`,
+        date: "Ene 2017 - Feb 2018",
+    },
+    {
+        title: "Estudiante en prácticas",
+        description: `Durante el tiempo que estuve en Nuevos Medios, estuve a cargo del diseño e implementación del estándar Learning Tools Interoperability (LTI) para la plataforma KME, este estándar ayuda a que plataformas de e-learning como KME pueda ofrecer mayores contenidos para los cursos alojando en la plataforma y también pueda compartirlos con otras. es una herramienta clave para la gestión del conocimiento.
+También se implementó la integración con el servicio de videollamadas ZOOM para KME, como nueva forma de contenido para mejorar la relación entre tutor-estudiante y así pueda mejorar la distribución de conocimientos.`,
+        date: "Sep 2015 - Oct 2016",
+    },
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-5">
+    {
+        experiencias.map((experiencia, index) => (
+            <ExperienciaItem {...experiencia} latest={index === 0} />
+        ))
+    }
+</ol>

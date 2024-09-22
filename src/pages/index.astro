@@ -1,0 +1,77 @@
+---
+import Badge from "../Components/Badge.astro";
+import SocialPill from "../Components/SocialPill.astro";
+import GithubIcon from "../Icons/Github.astro";
+import LinkedInIcon from "../Icons/LinkedIn.astro";
+import MailIcon from "../Icons/Mail.astro";
+import Layout from "../Layouts/Layout.astro";
+import SectionContainer from "../Components/SectionContainer.astro";
+import Experiencia from "../Components/Experiencia.astro";
+import ExperienceIcon from "../Icons/Experience.astro";
+import CodeSandboxIcon from "../Icons/CodeSandbox.astro";
+import Proyectos from "../Components/Proyectos.astro";
+import { Image } from "astro:assets";
+---
+
+<Layout
+    title="Portafolio de Guillermo Castillo, desarrollador web full stack"
+    description="Contrata a Guillermo Castillo, un desarrollador web full stack con más de 8 años de experiencia creando soluciones digitales innovadoras."
+>
+    <main class="px-4">
+        <SectionContainer id="inicio" class="pt-44 pb-24">
+            <Image
+                class="rounded-full mb-4"
+                src="https://avatars.githubusercontent.com/u/7396360?v=4"
+                alt="Guillermo's pic"
+                width={50}
+                height={50}
+            />
+            <h1
+                class="text-white text-2xl md:text-4xl font-bold flex flex-row gap-x-4 pb-4"
+            >
+                Hola, soy Guillermo <a
+                    href="https://www.linkedin.com/in/guillermo-castillo-4a9b0650/"
+                    target="_blank"
+                    rel="noopener"
+                    class="flex justify-center items-center"
+                >
+                    <Badge>Disponible para trabajar</Badge>
+                </a>
+            </h1>
+            <h2 class="text-xl md:text-2xl text-wrap max-w-[700px]">
+                <span class="text-opacity-80">Desarrollador web Full Stack</span
+                >, con más de 8 años creando soluciones digitales innovadoras.
+                De Guadalajara de Buga, Colombia.
+            </h2>
+            <nav
+                class="flex flex-col md:flex-row max-md:gap-y-4 md:gap-x-4 md:mt-8"
+            >
+                <SocialPill href="https://github.com/guillercp93">
+                    <GithubIcon class="size-4 md:size-6" />Github
+                </SocialPill>
+                <SocialPill
+                    href="https://www.linkedin.com/in/guillermo-castillo-4a9b0650/"
+                >
+                    <LinkedInIcon class="size-4 md:size-6" />LinkedIn
+                </SocialPill>
+                <SocialPill href="mailto:guillercp93@gmail.com">
+                    <MailIcon class="size-4 md:size-6" />guillercp93@gmail.com
+                </SocialPill>
+            </nav>
+        </SectionContainer>
+        <SectionContainer
+            id="experiencia"
+            titulo="Experiencia Laboral"
+            icono={ExperienceIcon}
+        >
+            <Experiencia />
+        </SectionContainer>
+        <SectionContainer
+            id="proyectos"
+            titulo="Proyectos"
+            icono={CodeSandboxIcon}
+        >
+            <Proyectos />
+        </SectionContainer>
+    </main>
+</Layout>
