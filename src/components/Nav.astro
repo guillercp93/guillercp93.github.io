@@ -1,27 +1,32 @@
 ---
+import { getRelativeLocaleUrl } from 'astro:i18n';
 import Icon from '@/components/Icon.astro';
+import { locales, toLocale, useTranslations } from '@/i18n/utils';
 
-const links = [
-  { href: '#sobre-mi', label: 'Sobre mí' },
-  { href: '#experiencia', label: 'Experiencia' },
-  { href: '#proyectos', label: 'Proyectos' },
-  { href: '#habilidades', label: 'Habilidades' },
-  { href: '#formacion', label: 'Formación' },
-  { href: '#contacto', label: 'Contacto' },
-];
+const locale = toLocale(Astro.currentLocale);
+const t = useTranslations(locale);
+const otherLocale = locales.find((l) => l !== locale) ?? locale;
+
+const sections = ['about', 'experience', 'projects', 'skills', 'education', 'contact'] as const;
+const links = sections.map((key) => ({ href: `#${t.ids[key]}`, label: t.nav[key] }));
 ---
 
 <header class="nav">
   <div class="container nav-inner">
-    <a href="#inicio" class="brand" aria-label="Ir al inicio">
+    <a href={`#${t.ids.home}`} class="brand" aria-label={t.nav.home}>
       <span class="gradient-text">&lt;GC /&gt;</span>
     </a>
-    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
-      <Icon name="menu" />
-    </button>
-    <nav id="nav-links" class="links" aria-label="Secciones">
+    <nav id="nav-links" class="links" aria-label={t.nav.sections}>
       {links.map((link) => <a href={link.href}>{link.label}</a>)}
     </nav>
+    <div class="tools">
+      <a class="lang" href={getRelativeLocaleUrl(otherLocale)} hreflang={otherLocale} lang={otherLocale} aria-label={t.nav.switchLabel}>
+        {otherLocale.toUpperCase()}
+      </a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links" aria-label={t.nav.menu}>
+        <Icon name="menu" />
+      </button>
+    </div>
   </div>
 </header>
 
@@ -75,9 +80,33 @@ const links = [
     font-size: 1.1rem;
   }
 
+  .tools {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .lang {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 10px;
+    border: 1px solid var(--border-strong);
+    color: var(--text);
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+
+  .lang:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
   .links {
     display: flex;
     gap: 28px;
+    margin-left: auto;
+    margin-right: 24px;
     font-size: 0.92rem;
     color: var(--muted);
   }

@@ -18,8 +18,10 @@ npm run preview
 - Experience, projects, skills and education are content collections in `src/content/*.json`,
   validated by the schemas in `src/content.config.ts`. Entries are sorted by `order`.
 - Profile data and stats live in `src/data/profile.ts`.
+- The site is bilingual: Spanish at `/` and English at `/en/`. Translated fields use
+  `{ "es": "...", "en": "..." }`; interface strings live in `src/i18n/ui.ts`.
 - Technology icons are mapped in `src/data/tech-icons.ts`.
-- The downloadable CV is `public/cv-guillermo-castillo.pdf`.
+- The downloadable CVs are `public/cv-guillermo-castillo.pdf` (es) and `public/cv-guillermo-castillo-en.pdf` (en).
 
 `npm run build` type-checks the project (`astro check`) before building.
 

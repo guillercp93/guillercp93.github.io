@@ -3,31 +3,31 @@ import { Image } from 'astro:assets';
 import Icon from '@/components/Icon.astro';
 import { profile } from '@/data/profile';
 import { withBase } from '@/utils/url';
+import { localize, toLocale, useTranslations } from '@/i18n/utils';
+
+const locale = toLocale(Astro.currentLocale);
+const t = useTranslations(locale);
 ---
 
-<section id="inicio" class="hero">
+<section id={t.ids.home} class="hero">
   <div class="container hero-grid">
     <div class="hero-copy reveal">
-      <p class="eyebrow">&gt; Hola, soy</p>
+      <p class="eyebrow">&gt; {t.hero.greeting}</p>
       <h1>
         <span class="gradient-text">{profile.shortName}</span>
       </h1>
-      <p class="role">{profile.role}</p>
-      <p class="pitch">
-        Construyo aplicaciones web de punta a punta con <strong>React</strong>, <strong>.NET</strong>,{' '}
-        <strong>Django</strong> y <strong>Laravel</strong>, y automatizo procesos de datos con{' '}
-        <strong>ETL</strong>, <strong>Airflow</strong> y <strong>Power BI</strong>.
-      </p>
+      <p class="role">{localize(profile.role, locale)}</p>
+      <p class="pitch" set:html={t.hero.pitch} />
       <p class="location">
         <Icon name="location" />
         {profile.location}
       </p>
       <div class="actions">
-        <a class="btn btn-primary" href={withBase(profile.cv)} download>
-          <Icon name="download" /> Descargar CV
+        <a class="btn btn-primary" href={withBase(localize(profile.cv, locale))} download>
+          <Icon name="download" /> {t.hero.downloadCv}
         </a>
-        <a class="btn btn-ghost" href="#contacto">
-          Contactar <Icon name="arrow" />
+        <a class="btn btn-ghost" href={`#${t.ids.contact}`}>
+          {t.hero.contact} <Icon name="arrow" />
         </a>
       </div>
       <div class="socials">
@@ -37,7 +37,7 @@ import { withBase } from '@/utils/url';
         <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
           <Icon name="linkedin" />
         </a>
-        <a href={`mailto:${profile.email}`} aria-label="Correo electrónico">
+        <a href={`mailto:${profile.email}`} aria-label={t.hero.email}>
           <Icon name="mail" />
         </a>
       </div>
@@ -45,7 +45,7 @@ import { withBase } from '@/utils/url';
 
     <div class="hero-visual reveal">
       <div class="avatar-ring">
-        <Image src={`${profile.avatar}?s=300`} alt={`Foto de ${profile.shortName}`} width={150} height={150} loading="eager" />
+        <Image src={`${profile.avatar}?s=300`} alt={`${t.hero.photo} ${profile.shortName}`} width={150} height={150} loading="eager" />
       </div>
       <div class="code card" aria-hidden="true">
         <div class="code-bar">

@@ -2,14 +2,27 @@
   {
     "id": "siesa",
     "order": 1,
-    "role": "Desarrollador Senior",
+    "role": {
+      "es": "Desarrollador Senior",
+      "en": "Senior Developer"
+    },
     "company": "Siesa",
-    "period": "2026 – Actualidad",
-    "highlights": [
-      "Desarrollo de dos plataformas con asistencia de inteligencia artificial.",
-      "Plataforma de gestión de agentes de IA: el usuario crea su agente, le inyecta conocimiento y amplía sus capacidades con page tools y MCP tools.",
-      "Plataforma de gestión de datos de clientes: el usuario conecta sus fuentes de datos y genera reportes con la ayuda de un agente de IA."
-    ],
+    "period": {
+      "es": "2026 – Actualidad",
+      "en": "2026 – Present"
+    },
+    "highlights": {
+      "es": [
+        "Desarrollo de dos plataformas con asistencia de inteligencia artificial.",
+        "Plataforma de gestión de agentes de IA: el usuario crea su agente, le inyecta conocimiento y amplía sus capacidades con page tools y MCP tools.",
+        "Plataforma de gestión de datos de clientes: el usuario conecta sus fuentes de datos y genera reportes con la ayuda de un agente de IA."
+      ],
+      "en": [
+        "Development of two platforms with AI assistance.",
+        "AI agent management platform: the user creates an agent, adds knowledge to it and gives it more capabilities with page tools and MCP tools.",
+        "Customer data management platform: the user connects data sources and creates reports with the help of an AI agent."
+      ]
+    },
     "stack": [
       "React",
       ".NET 10",
@@ -25,13 +38,22 @@
     "role": "Technical Consultant",
     "company": "Kata Software S.A.S",
     "period": "2025 – 2026",
-    "highlights": [
-      "Implementación de la capa de servicios (middleware) para la comunicación entre Kata Mobile, Kata Engine y sistemas externos de clientes del sector financiero.",
-      "Integraciones con centrales de riesgo, servicios de validación de identidad y firma electrónica.",
-      "Consulta y envío de información hacia y desde sistemas internos de clientes.",
-      "Generación de documentos PDF para firma electrónica y reportes, y procesamiento básico de imágenes.",
-      "Despliegue en Azure App Services, con Azure Storage para archivos y Application Insights para monitoreo y logs."
-    ],
+    "highlights": {
+      "es": [
+        "Implementación de la capa de servicios (middleware) para la comunicación entre Kata Mobile, Kata Engine y sistemas externos de clientes del sector financiero.",
+        "Integraciones con centrales de riesgo, servicios de validación de identidad y firma electrónica.",
+        "Consulta y envío de información hacia y desde sistemas internos de clientes.",
+        "Generación de documentos PDF para firma electrónica y reportes, y procesamiento básico de imágenes.",
+        "Despliegue en Azure App Services, con Azure Storage para archivos y Application Insights para monitoreo y logs."
+      ],
+      "en": [
+        "I built a middleware service layer to connect Kata Mobile, Kata Engine and external systems of clients in the financial sector.",
+        "Integrations with credit bureaus, identity validation services and electronic signature services.",
+        "Sending and receiving information from the internal systems of the clients.",
+        "Creation of PDF documents for electronic signature and reports, and basic image processing.",
+        "Deployment on Azure App Services, using Azure Storage for files and Application Insights for monitoring and logs."
+      ]
+    },
     "stack": [
       ".NET 8",
       "C#",
@@ -43,16 +65,30 @@
   {
     "id": "mawesi",
     "order": 3,
-    "role": "Desarrollador Senior Full Stack",
+    "role": {
+      "es": "Desarrollador Senior Full Stack",
+      "en": "Senior Full Stack Developer"
+    },
     "company": "Mawesi S.A.S",
     "period": "2018 – 2024",
-    "highlights": [
-      "Soporte y mejora de la aplicación web de administración de solicitudes para una universidad.",
-      "Optimización del Sistema de Producción de una compañía farmacéutica, con cargue de información mediante DataStage e informes en Power BI y Excel.",
-      "Módulos de carga y transformación de datos con Pandas integrados en una aplicación Django, automatizando procesos manuales con una reducción de tiempos de alrededor del 70%.",
-      "Migración de soluciones de procesamiento de datos a Apache Airflow, mejorando la escalabilidad y el mantenimiento.",
-      "Procesos ETL en DataStage desde múltiples fuentes hacia distintos destinos, con ejecución programada o bajo demanda."
-    ],
+    "highlights": {
+      "es": [
+        "Soporte y mejora de la aplicación web de administración de solicitudes para una universidad.",
+        "Optimización del Sistema de Producción de una compañía farmacéutica, con cargue de información mediante DataStage e informes en Power BI y Excel.",
+        "Módulos de carga y transformación de datos con Pandas integrados en una aplicación Django, automatizando procesos manuales con una reducción de tiempos de alrededor del 70%.",
+        "Migración de soluciones de procesamiento de datos a Apache Airflow, mejorando la escalabilidad y el mantenimiento.",
+        "Procesos ETL en DataStage desde múltiples fuentes hacia distintos destinos, con ejecución programada o bajo demanda.",
+        "Flujo automatizado con Jenkins para la ejecución de pruebas y SonarQube para la evaluación continua de la calidad del código, elevando los estándares de desarrollo antes de la entrega al cliente."
+      ],
+      "en": [
+        "Support and improvements for the web application that manages requests in a university.",
+        "Optimization of the Production System web application for a pharmaceutical company, with data loading using DataStage and reports in Power BI and Excel.",
+        "Modules to load and transform data with Pandas inside a Django application, automating manual processes and reducing the time by about 70%.",
+        "Migration of data processing solutions to Apache Airflow, improving scalability and maintenance.",
+        "ETL processes in DataStage from many sources to different destinations, scheduled or on demand.",
+        "Automated workflow with Jenkins to run tests and SonarQube to check code quality continuously, improving the development standards before delivery to the client."
+      ]
+    },
     "stack": [
       "React",
       "Laravel",
@@ -63,20 +99,32 @@
       "Pandas",
       "Airflow",
       "DataStage",
-      "Power BI"
+      "Power BI",
+      "Jenkins",
+      "SonarQube"
     ]
   },
   {
     "id": "opal-group",
     "order": 4,
-    "role": "Ingeniero de Desarrollo",
+    "role": {
+      "es": "Ingeniero de Desarrollo",
+      "en": "Development Engineer"
+    },
     "company": "Opal Group S.A.S",
     "period": "2017 – 2018",
-    "highlights": [
-      "Implementación del sistema CRM para nuevos clientes con Django, Oracle y MySQL, y AngularJS en la interfaz.",
-      "Módulo de gestión de proyectos: registro y cálculo de costos operativos y administrativos para una empresa constructora.",
-      "Módulo de paquetes configurables para agrupar jerárquicamente servicios e insumos, con interfaz en ReactJS."
-    ],
+    "highlights": {
+      "es": [
+        "Implementación del sistema CRM para nuevos clientes con Django, Oracle y MySQL, y AngularJS en la interfaz.",
+        "Módulo de gestión de proyectos: registro y cálculo de costos operativos y administrativos para una empresa constructora.",
+        "Módulo de paquetes configurables para agrupar jerárquicamente servicios e insumos, con interfaz en ReactJS."
+      ],
+      "en": [
+        "Implementation of the CRM system for new clients with Django, Oracle and MySQL, and AngularJS for the interface.",
+        "Project management module: registration and calculation of operating and administrative costs for a construction company.",
+        "Configurable packages module to group services and supplies in a hierarchy, with a ReactJS interface."
+      ]
+    },
     "stack": [
       "Python",
       "Django",
@@ -89,15 +137,26 @@
   {
     "id": "nuevos-medios",
     "order": 5,
-    "role": "Estudiante en prácticas",
+    "role": {
+      "es": "Estudiante en prácticas",
+      "en": "Intern"
+    },
     "company": "Nuevos Medios S.A.S",
     "period": "2015 – 2016",
-    "highlights": [
-      "Diagnóstico y solución de incidencias de la plataforma de aprendizaje en línea KME, mejorando su estabilidad y rendimiento.",
-      "Integración de videollamadas con Zoom y configuración de AWS CloudFront para streaming de video.",
-      "Migración visual de jQuery y Bootstrap a AngularJS con Material Design.",
-      "Módulo de interoperabilidad bajo el estándar LTI como trabajo de grado."
-    ],
+    "highlights": {
+      "es": [
+        "Diagnóstico y solución de incidencias de la plataforma de aprendizaje en línea KME, mejorando su estabilidad y rendimiento.",
+        "Integración de videollamadas con Zoom y configuración de AWS CloudFront para streaming de video.",
+        "Migración visual de jQuery y Bootstrap a AngularJS con Material Design.",
+        "Módulo de interoperabilidad bajo el estándar LTI como trabajo de grado."
+      ],
+      "en": [
+        "Diagnosis and solution of issues in the KME e-learning platform, improving its stability and performance.",
+        "Integration with Zoom video calls and configuration of AWS CloudFront for video streaming.",
+        "Visual update of the platform, moving from jQuery and Bootstrap to AngularJS with Material Design.",
+        "Development of the interoperability module with the LTI standard as my degree project."
+      ]
+    },
     "stack": [
       "AngularJS",
       "Material Design",

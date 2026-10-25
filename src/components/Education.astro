@@ -1,14 +1,18 @@
 ---
 import { getOrdered } from '@/utils/content';
+import { localize, toLocale, useTranslations } from '@/i18n/utils';
+
+const locale = toLocale(Astro.currentLocale);
+const t = useTranslations(locale);
 
 const education = await getOrdered('education');
 ---
 
-<section id="formacion" class="section">
+<section id={t.ids.education} class="section">
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">05 · formación</p>
-      <h2 class="section-title">Educación y certificaciones</h2>
+      <p class="eyebrow">{t.education.eyebrow}</p>
+      <h2 class="section-title">{t.education.title}</h2>
     </div>
     <ul class="list">
       {
@@ -16,8 +20,8 @@ const education = await getOrdered('education');
           <li class="card entry reveal">
             <span class="year">{entry.year}</span>
             <div>
-              <p class="kind">{entry.kind}</p>
-              <h3>{entry.title}</h3>
+              <p class="kind">{localize(entry.kind, locale)}</p>
+              <h3>{localize(entry.title, locale)}</h3>
               <p class="place">{entry.place}</p>
             </div>
           </li>

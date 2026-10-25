@@ -3,7 +3,10 @@
     "id": "msi-performance-manager",
     "order": 1,
     "name": "MSI Performance Manager",
-    "description": "Gestor de rendimiento compatible con Wayland para portátiles gaming MSI: monitoreo de sensores en vivo, perfiles, límite de potencia de GPU y Cooler Boost, con escalamiento de privilegios vía Polkit.",
+    "description": {
+      "es": "Gestor de rendimiento compatible con Wayland para portátiles gaming MSI: monitoreo de sensores en vivo, perfiles, límite de potencia de GPU y Cooler Boost, con escalamiento de privilegios vía Polkit.",
+      "en": "Performance manager for MSI gaming laptops that works with Wayland: live sensor monitoring, profiles, GPU power limit and Cooler Boost, using Polkit for privileges."
+    },
     "stack": [
       "Rust",
       "Tauri 2",
@@ -16,7 +19,10 @@
     "id": "htmltopdfdotnet",
     "order": 2,
     "name": "HtmlToPdfDotNet",
-    "description": "Librería para generar PDFs a partir de HTML directamente en .NET.",
+    "description": {
+      "es": "Librería para generar PDFs a partir de HTML directamente en .NET.",
+      "en": "Library to create PDFs from HTML directly in .NET."
+    },
     "stack": [
       "C#",
       ".NET 10",
@@ -28,7 +34,10 @@
     "id": "drrr",
     "order": 3,
     "name": "DRRR",
-    "description": "Chat web inspirado en el grupo Dollars de la serie Durarara!!, desplegado en Firebase.",
+    "description": {
+      "es": "Chat web inspirado en el grupo Dollars de la serie Durarara!!, desplegado en Firebase.",
+      "en": "Web chat inspired by the Dollars group from the Durarara!! series, deployed on Firebase."
+    },
     "stack": [
       "TypeScript",
       "Firebase"
@@ -40,7 +49,10 @@
     "id": "music-player",
     "order": 4,
     "name": "Music Player",
-    "description": "Reproductor de música de escritorio multiplataforma para Windows, macOS y Linux.",
+    "description": {
+      "es": "Reproductor de música de escritorio multiplataforma para Windows, macOS y Linux.",
+      "en": "Desktop music player for Windows, macOS and Linux."
+    },
     "stack": [
       "TypeScript",
       "Electron",
@@ -52,7 +64,10 @@
     "id": "castlevania-theme-for-omarchy",
     "order": 5,
     "name": "Castlevania Theme for Omarchy",
-    "description": "Tema para Omarchy inspirado en el videojuego Castlevania: Lament of Innocence.",
+    "description": {
+      "es": "Tema para Omarchy inspirado en el videojuego Castlevania: Lament of Innocence.",
+      "en": "Theme for Omarchy inspired by the video game Castlevania: Lament of Innocence."
+    },
     "stack": [
       "CSS",
       "Linux",
@@ -64,7 +79,10 @@
     "id": "kata-net-project",
     "order": 6,
     "name": "Kata .NET Project",
-    "description": "Solución a la prueba técnica de Kata Software construida con .NET.",
+    "description": {
+      "es": "Solución a la prueba técnica de Kata Software construida con .NET.",
+      "en": "Solution for the technical test of Kata Software, built with .NET."
+    },
     "stack": [
       "C#",
       ".NET"

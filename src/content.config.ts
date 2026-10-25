@@ -3,16 +3,18 @@ import { file } from 'astro/loaders';
 import { z } from 'astro/zod';
 
 const order = z.number().int().positive();
-const stack = z.array(z.string()).nonempty();
+// Same text in every locale, or one translation per locale.
+const text = z.union([z.string(), z.object({ es: z.string(), en: z.string() })]);
+const stack = z.array(text).nonempty();
 
 const experience = defineCollection({
   loader: file('src/content/experience.json'),
   schema: z.object({
     order,
-    role: z.string(),
+    role: text,
     company: z.string(),
-    period: z.string(),
-    highlights: z.array(z.string()).nonempty(),
+    period: text,
+    highlights: z.object({ es: z.array(z.string()).nonempty(), en: z.array(z.string()).nonempty() }),
     stack,
   }),
 });
@@ -22,7 +24,7 @@ const projects = defineCollection({
   schema: z.object({
     order,
     name: z.string(),
-    description: z.string(),
+    description: text,
     stack,
     repo: z.url(),
     demo: z.url().optional(),
@@ -33,8 +35,8 @@ const skills = defineCollection({
   loader: file('src/content/skills.json'),
   schema: z.object({
     order,
-    group: z.string(),
-    items: z.array(z.string()).nonempty(),
+    group: text,
+    items: stack,
   }),
 });
 
@@ -42,10 +44,10 @@ const education = defineCollection({
   loader: file('src/content/education.json'),
   schema: z.object({
     order,
-    title: z.string(),
+    title: text,
     place: z.string(),
     year: z.string().regex(/^\d{4}$/),
-    kind: z.string(),
+    kind: text,
   }),
 });
 
