@@ -1,0 +1,146 @@
+---
+import TechIcon from './TechIcon.astro';
+import { experience } from '../data/profile';
+---
+
+<section id="experiencia" class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">02 · experiencia</p>
+      <h2 class="section-title">Trayectoria profesional</h2>
+    </div>
+    <ol class="timeline">
+      {
+        experience.map((job, index) => (
+          <li class="item reveal">
+            <span class:list={['marker', { current: index === 0 }]} aria-hidden="true" />
+            <article class="card job">
+              <header>
+                <div>
+                  <h3>{job.role}</h3>
+                  <p class="company">{job.company}</p>
+                </div>
+                <span class="period">{job.period}</span>
+              </header>
+              <ul class="highlights">
+                {job.highlights.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+              <ul class="stack" aria-label="Tecnologías">
+                {job.stack.map((tech) => (
+                  <li class="chip">
+                    <TechIcon name={tech} />
+                    {tech}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
+
+<style>
+  .timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 28px;
+    position: relative;
+    display: grid;
+    gap: 28px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: linear-gradient(var(--accent), var(--accent-2), transparent);
+    opacity: 0.5;
+  }
+
+  .item {
+    position: relative;
+  }
+
+  .marker {
+    position: absolute;
+    left: -28px;
+    top: 26px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent-2);
+  }
+
+  .marker.current {
+    background: var(--accent);
+    border-color: var(--accent);
+    box-shadow: 0 0 16px var(--accent);
+  }
+
+  .job {
+    padding: 24px;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+  }
+
+  .job:hover {
+    border-color: var(--border-strong);
+  }
+
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px 16px;
+    margin-bottom: 16px;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  .company {
+    color: var(--accent);
+    font-weight: 600;
+    margin-top: 2px;
+  }
+
+  .period {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--muted);
+    padding: 4px 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    height: fit-content;
+  }
+
+  .highlights {
+    margin: 0;
+    padding-left: 18px;
+    display: grid;
+    gap: 8px;
+    color: var(--muted);
+  }
+
+  .highlights li::marker {
+    color: var(--accent-2);
+  }
+
+  .stack {
+    list-style: none;
+    margin: 18px 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+</style>

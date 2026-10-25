@@ -1,0 +1,135 @@
+---
+import Icon from './Icon.astro';
+
+const links = [
+  { href: '#sobre-mi', label: 'Sobre mí' },
+  { href: '#experiencia', label: 'Experiencia' },
+  { href: '#proyectos', label: 'Proyectos' },
+  { href: '#habilidades', label: 'Habilidades' },
+  { href: '#formacion', label: 'Formación' },
+  { href: '#contacto', label: 'Contacto' },
+];
+---
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="#inicio" class="brand" aria-label="Ir al inicio">
+      <span class="gradient-text">&lt;GC /&gt;</span>
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
+      <Icon name="menu" />
+    </button>
+    <nav id="nav-links" class="links" aria-label="Secciones">
+      {links.map((link) => <a href={link.href}>{link.label}</a>)}
+    </nav>
+  </div>
+</header>
+
+<script>
+  const button = document.querySelector<HTMLButtonElement>('.menu-btn');
+  const nav = document.getElementById('nav-links');
+  const header = document.querySelector('.nav');
+
+  button?.addEventListener('click', () => {
+    const open = nav?.classList.toggle('open') ?? false;
+    button.setAttribute('aria-expanded', String(open));
+  });
+
+  nav?.querySelectorAll('a').forEach((link) =>
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      button?.setAttribute('aria-expanded', 'false');
+    }),
+  );
+
+  const onScroll = () => header?.classList.toggle('scrolled', window.scrollY > 12);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+</script>
+
+<style>
+  .nav {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 50;
+    border-bottom: 1px solid transparent;
+    transition: background 0.3s ease, border-color 0.3s ease;
+  }
+
+  .nav:global(.scrolled) {
+    background: rgba(7, 11, 20, 0.75);
+    backdrop-filter: blur(14px);
+    border-color: var(--border);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+  }
+
+  .brand {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  .links {
+    display: flex;
+    gap: 28px;
+    font-size: 0.92rem;
+    color: var(--muted);
+  }
+
+  .links a {
+    transition: color 0.2s ease;
+  }
+
+  .links a:hover {
+    color: var(--text);
+  }
+
+  .menu-btn {
+    display: none;
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    padding: 8px;
+    cursor: pointer;
+  }
+
+  @media (max-width: 860px) {
+    .menu-btn {
+      display: inline-flex;
+    }
+
+    .links {
+      display: none;
+      position: absolute;
+      top: 68px;
+      left: 16px;
+      right: 16px;
+      flex-direction: column;
+      gap: 4px;
+      padding: 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .links:global(.open) {
+      display: flex;
+    }
+
+    .links a {
+      padding: 10px 12px;
+      border-radius: 10px;
+    }
+
+    .links a:hover {
+      background: var(--surface-2);
+    }
+  }
+</style>

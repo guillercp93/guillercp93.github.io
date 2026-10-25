@@ -1,0 +1,76 @@
+---
+import { profile, stats } from '../data/profile';
+---
+
+<section id="sobre-mi" class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">01 · sobre mí</p>
+      <h2 class="section-title">Software que mejora la productividad</h2>
+    </div>
+    <div class="about-grid">
+      <div class="text reveal">
+        <p>{profile.summary}</p>
+        <p>{profile.strengths}</p>
+      </div>
+      <ul class="stats reveal">
+        {
+          stats.map((stat) => (
+            <li class="card">
+              <strong class="gradient-text">{stat.value}</strong>
+              <span>{stat.label}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-grid {
+    display: grid;
+    gap: 40px;
+  }
+
+  @media (min-width: 900px) {
+    .about-grid {
+      grid-template-columns: 1.3fr 1fr;
+      align-items: start;
+    }
+  }
+
+  .text {
+    display: grid;
+    gap: 18px;
+    color: var(--muted);
+    font-size: 1.08rem;
+  }
+
+  .stats {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .stats li {
+    padding: 22px 18px;
+    display: grid;
+    gap: 4px;
+  }
+
+  .stats strong {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.1;
+  }
+
+  .stats span {
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.4;
+  }
+</style>

@@ -1,0 +1,82 @@
+---
+import Icon from './Icon.astro';
+import { profile } from '../data/profile';
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+---
+
+<section id="contacto" class="section">
+  <div class="container">
+    <div class="card cta reveal">
+      <p class="eyebrow">06 · contacto</p>
+      <h2 class="section-title">¿Construimos algo <span class="gradient-text">juntos</span>?</h2>
+      <p class="lead">
+        ¿Tienes un proyecto, una propuesta o simplemente quieres conversar? Escríbeme y te respondo
+        lo antes posible.
+      </p>
+      <a class="email" href={`mailto:${profile.email}`}>{profile.email}</a>
+      <div class="actions">
+        <a class="btn btn-primary" href={`mailto:${profile.email}`}>
+          <Icon name="mail" /> Enviar correo
+        </a>
+        <a class="btn btn-ghost" href={profile.linkedin} target="_blank" rel="noopener noreferrer">
+          <Icon name="linkedin" /> LinkedIn
+        </a>
+        <a class="btn btn-ghost" href={`${base}${profile.cv}`} download>
+          <Icon name="download" /> Hoja de vida
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 56px 20px;
+  }
+
+  .cta::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    z-index: -1;
+    background:
+      radial-gradient(400px 200px at 50% 0%, rgba(34, 211, 238, 0.18), transparent 70%),
+      radial-gradient(400px 200px at 50% 100%, rgba(167, 139, 250, 0.16), transparent 70%);
+  }
+
+  .cta > * {
+    position: relative;
+  }
+
+  .lead {
+    color: var(--muted);
+    max-width: 540px;
+    margin: 16px auto 0;
+    font-size: 1.05rem;
+  }
+
+  .email {
+    display: inline-block;
+    margin-top: 22px;
+    font-family: var(--font-mono);
+    font-size: clamp(0.95rem, 3.5vw, 1.25rem);
+    color: var(--accent);
+    word-break: break-all;
+  }
+
+  .email:hover {
+    text-decoration: underline;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 28px;
+  }
+</style>

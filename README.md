@@ -1,40 +1,27 @@
-# Portfolio of Guillermo Castillo
+# Guillermo Castillo · Portfolio
 
-This project is a personal portfolio website for Guillermo Castillo, a full-stack web developer with over 8 years of experience. The website is built using Astro, a modern static site generator.
+Personal portfolio built with [Astro](https://astro.build) and deployed to GitHub Pages.
 
-## File: `src/pages/index.astro`
+Live site: https://guillercp93.github.io/portfolio/
 
-This file is the main entry point for the portfolio website. It sets up the layout and content for the homepage.
+## Development
 
-### Imports
+```sh
+npm install
+npm run dev      # http://localhost:4321/portfolio/
+npm run build    # outputs to dist/
+npm run preview
+```
 
-The file imports various components and icons used throughout the page:
+## Updating content
 
-- `Badge`, `SocialPill`, `SectionContainer`, `Experiencia`, `Proyectos` from the `Components` directory.
-- `GithubIcon`, `LinkedInIcon`, `MailIcon`, `ExperienceIcon`, `CodeSandboxIcon` from the `Icons` directory.
-- `Layout` from the `Layouts` directory.
-- `Image` from `astro:assets`.
+All content (profile, experience, projects, skills, education) lives in
+`src/data/profile.ts`. The downloadable CV is `public/cv-guillermo-castillo.pdf`.
 
-### Layout
+## Deployment
 
-The `Layout` component is used to wrap the main content of the page. It includes metadata such as the title and description of the page.
+Every push to `main` runs `.github/workflows/deploy.yml`, which builds the site and
+publishes it to GitHub Pages. In the repository settings, set
+**Settings → Pages → Source** to **GitHub Actions**.
 
-### Main Content
-
-The main content of the page is wrapped in a `<main>` tag with some padding classes.
-
-#### Section: Inicio
-
-This section introduces Guillermo Castillo with a profile picture, a greeting, and a brief description of his experience and location.
-
-#### Section: Experiencia Laboral
-
-This section showcases Guillermo's work experience using the `Experiencia` component.
-
-#### Section: Proyectos
-
-This section highlights Guillermo's projects using the `Proyectos` component.
-
-## Conclusion
-
-This `index.astro` file sets up the main structure and content of Guillermo Castillo's portfolio website. It uses various components to organize the content into sections, making it easy to maintain and update.
+If the repository is renamed, update `base` in `astro.config.mjs` to match.

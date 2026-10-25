@@ -1,0 +1,79 @@
+---
+import { education } from '../data/profile';
+---
+
+<section id="formacion" class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">05 · formación</p>
+      <h2 class="section-title">Educación y certificaciones</h2>
+    </div>
+    <ul class="list">
+      {
+        education.map((entry) => (
+          <li class="card entry reveal">
+            <span class="year">{entry.year}</span>
+            <div>
+              <p class="kind">{entry.kind}</p>
+              <h3>{entry.title}</h3>
+              <p class="place">{entry.place}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 14px;
+  }
+
+  @media (min-width: 800px) {
+    .list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .entry {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .year {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--accent);
+    padding: 6px 10px;
+    border-radius: 10px;
+    background: rgba(34, 211, 238, 0.08);
+    border: 1px solid rgba(34, 211, 238, 0.25);
+  }
+
+  .kind {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+  }
+
+  h3 {
+    font-size: 1.05rem;
+    font-weight: 650;
+    margin-top: 4px;
+  }
+
+  .place {
+    color: var(--accent-2);
+    font-size: 0.92rem;
+    margin-top: 4px;
+  }
+</style>

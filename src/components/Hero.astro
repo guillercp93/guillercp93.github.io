@@ -1,0 +1,238 @@
+---
+import Icon from './Icon.astro';
+import { profile } from '../data/profile';
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+---
+
+<section id="inicio" class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy reveal">
+      <p class="eyebrow">&gt; Hola, soy</p>
+      <h1>
+        <span class="gradient-text">{profile.shortName}</span>
+      </h1>
+      <p class="role">{profile.role}</p>
+      <p class="pitch">
+        Construyo aplicaciones web de punta a punta con <strong>React</strong>, <strong>.NET</strong>,{' '}
+        <strong>Django</strong> y <strong>Laravel</strong>, y automatizo procesos de datos con{' '}
+        <strong>ETL</strong>, <strong>Airflow</strong> y <strong>Power BI</strong>.
+      </p>
+      <p class="location">
+        <Icon name="location" />
+        {profile.location}
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href={`${base}${profile.cv}`} download>
+          <Icon name="download" /> Descargar CV
+        </a>
+        <a class="btn btn-ghost" href="#contacto">
+          Contactar <Icon name="arrow" />
+        </a>
+      </div>
+      <div class="socials">
+        <a href={profile.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <Icon name="github" />
+        </a>
+        <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <Icon name="linkedin" />
+        </a>
+        <a href={`mailto:${profile.email}`} aria-label="Correo electrónico">
+          <Icon name="mail" />
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="avatar-ring">
+        <img src={profile.avatar} alt={`Foto de ${profile.shortName}`} width="160" height="160" />
+      </div>
+      <div class="code card" aria-hidden="true">
+        <div class="code-bar">
+          <span></span><span></span><span></span>
+          <em>developer.ts</em>
+        </div>
+        <pre><code><span class="k">const</span> <span class="v">guillermo</span> = {"{"}
+  role: <span class="s">'Full Stack Developer'</span>,
+  experience: <span class="n">8</span>+,
+  backend: [<span class="s">'.NET'</span>, <span class="s">'Django'</span>, <span class="s">'Laravel'</span>],
+  frontend: [<span class="s">'React'</span>, <span class="s">'TypeScript'</span>],
+  data: [<span class="s">'Airflow'</span>, <span class="s">'DataStage'</span>, <span class="s">'Power BI'</span>],
+  cloud: [<span class="s">'Azure'</span>, <span class="s">'AWS'</span>],
+{"}"};</code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    padding-block: 120px 72px;
+  }
+
+  .hero-grid {
+    display: grid;
+    gap: 56px;
+    align-items: center;
+  }
+
+  @media (min-width: 960px) {
+    .hero-grid {
+      grid-template-columns: 1.15fr 1fr;
+    }
+  }
+
+  h1 {
+    font-size: clamp(2.6rem, 8vw, 4.75rem);
+    font-weight: 800;
+    margin-top: 8px;
+    letter-spacing: -0.035em;
+  }
+
+  .role {
+    font-size: clamp(1.1rem, 2.6vw, 1.4rem);
+    font-weight: 600;
+    margin-top: 14px;
+  }
+
+  .pitch {
+    color: var(--muted);
+    font-size: 1.08rem;
+    max-width: 560px;
+    margin-top: 16px;
+  }
+
+  .pitch strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-top: 18px;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .socials {
+    display: flex;
+    gap: 10px;
+    margin-top: 28px;
+  }
+
+  .socials a {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .socials a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .hero-visual {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    min-width: 0;
+  }
+
+  .avatar-ring {
+    padding: 4px;
+    border-radius: 50%;
+    background: var(--gradient);
+    box-shadow: 0 0 60px -10px rgba(167, 139, 250, 0.55);
+  }
+
+  .avatar-ring img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid var(--bg);
+    object-fit: cover;
+  }
+
+  .code {
+    width: 100%;
+    max-width: 460px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px -30px rgba(34, 211, 238, 0.35);
+  }
+
+  .code-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .code-bar span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #334155;
+  }
+
+  .code-bar span:nth-child(1) {
+    background: #f87171;
+  }
+  .code-bar span:nth-child(2) {
+    background: #fbbf24;
+  }
+  .code-bar span:nth-child(3) {
+    background: #34d399;
+  }
+
+  .code-bar em {
+    margin-left: auto;
+    font-family: var(--font-mono);
+    font-style: normal;
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  pre {
+    margin: 0;
+    padding: 18px 20px;
+    overflow-x: auto;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    line-height: 1.75;
+    color: #cbd5e1;
+  }
+
+  .k {
+    color: #c084fc;
+  }
+  .v {
+    color: #67e8f9;
+  }
+  .s {
+    color: #86efac;
+  }
+  .n {
+    color: #fdba74;
+  }
+</style>

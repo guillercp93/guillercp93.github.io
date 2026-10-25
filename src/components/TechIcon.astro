@@ -1,0 +1,47 @@
+---
+import { getIconData, iconToSVG, iconToHTML, replaceIDs } from '@iconify/utils';
+import logos from '@iconify-json/logos/icons.json';
+import devicon from '@iconify-json/devicon/icons.json';
+import type { IconifyJSON } from '@iconify/types';
+import { techIcons } from '../data/tech-icons';
+
+interface Props {
+  name: string;
+}
+
+// Icons missing from the public sets.
+const custom: IconifyJSON = {
+  prefix: 'custom',
+  width: 24,
+  height: 24,
+  icons: {
+    oracle: {
+      body: '<rect x="2" y="6.5" width="20" height="11" rx="5.5" fill="none" stroke="#ea1b22" stroke-width="2.8"/>',
+    },
+  },
+};
+
+const sets: Record<string, IconifyJSON> = {
+  logos: logos as IconifyJSON,
+  devicon: devicon as IconifyJSON,
+  custom,
+};
+
+// Unmapped technologies render no icon.
+const entry = techIcons[Astro.props.name];
+let svg: string | null = null;
+
+if (entry) {
+  const [prefix, iconName] = entry.icon.split(':');
+  const data = getIconData(sets[prefix], iconName);
+  if (!data) throw new Error(`Unknown icon "${entry.icon}" for "${Astro.props.name}"`);
+  const { attributes, body } = iconToSVG(data, { height: '1em' });
+  svg = iconToHTML(replaceIDs(body), {
+    ...attributes,
+    class: entry.mono ? 'tech-icon mono' : 'tech-icon',
+    'aria-hidden': 'true',
+  });
+}
+---
+
+{svg && <Fragment set:html={svg} />}
