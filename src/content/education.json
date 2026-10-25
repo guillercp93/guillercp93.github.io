@@ -65,5 +65,19 @@
       "es": "Curso",
       "en": "Course"
     }
+  },
+  {
+    "id": "tecnicas-de-pruebas-de-software",
+    "order": 6,
+    "title": {
+      "es": "Técnicas de pruebas de software",
+      "en": "Software Testing Techniques"
+    },
+    "place": "Universidad del Valle",
+    "year": "2015",
+    "kind": {
+      "es": "Curso",
+      "en": "Course"
+    }
   }
 ]

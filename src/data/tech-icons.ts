@@ -61,6 +61,8 @@ export const techIcons: Record<string, TechIcon> = {
   AWS: aws,
   'AWS CloudFront': aws,
   Docker: { icon: 'logos:docker-icon' },
+  Jenkins: { icon: 'logos:jenkins' },
+  SonarQube: { icon: 'devicon:sonarqube' },
   Firebase: { icon: 'logos:firebase-icon' },
   Linux: { icon: 'logos:linux-tux' },
   'Zoom API': { icon: 'logos:zoom-icon' },

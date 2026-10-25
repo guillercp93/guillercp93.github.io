@@ -77,14 +77,16 @@
         "Optimización del Sistema de Producción de una compañía farmacéutica, con cargue de información mediante DataStage e informes en Power BI y Excel.",
         "Módulos de carga y transformación de datos con Pandas integrados en una aplicación Django, automatizando procesos manuales con una reducción de tiempos de alrededor del 70%.",
         "Migración de soluciones de procesamiento de datos a Apache Airflow, mejorando la escalabilidad y el mantenimiento.",
-        "Procesos ETL en DataStage desde múltiples fuentes hacia distintos destinos, con ejecución programada o bajo demanda."
+        "Procesos ETL en DataStage desde múltiples fuentes hacia distintos destinos, con ejecución programada o bajo demanda.",
+        "Flujo automatizado con Jenkins para la ejecución de pruebas y SonarQube para la evaluación continua de la calidad del código, elevando los estándares de desarrollo antes de la entrega al cliente."
       ],
       "en": [
         "Support and improvements for the web application that manages requests in a university.",
         "Optimization of the Production System web application for a pharmaceutical company, with data loading using DataStage and reports in Power BI and Excel.",
         "Modules to load and transform data with Pandas inside a Django application, automating manual processes and reducing the time by about 70%.",
         "Migration of data processing solutions to Apache Airflow, improving scalability and maintenance.",
-        "ETL processes in DataStage from many sources to different destinations, scheduled or on demand."
+        "ETL processes in DataStage from many sources to different destinations, scheduled or on demand.",
+        "Automated workflow with Jenkins to run tests and SonarQube to check code quality continuously, improving the development standards before delivery to the client."
       ]
     },
     "stack": [
@@ -97,7 +99,9 @@
       "Pandas",
       "Airflow",
       "DataStage",
-      "Power BI"
+      "Power BI",
+      "Jenkins",
+      "SonarQube"
     ]
   },
   {
