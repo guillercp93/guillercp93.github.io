@@ -1,0 +1,42 @@
+[
+  {
+    "id": "ingenieria-de-sistemas",
+    "order": 1,
+    "title": "Ingeniería de Sistemas",
+    "place": "Universidad del Valle",
+    "year": "2017",
+    "kind": "Formación académica"
+  },
+  {
+    "id": "ibm-full-stack-developer",
+    "order": 2,
+    "title": "IBM Full Stack Software Developer Certificate",
+    "place": "IBM · Coursera",
+    "year": "2025",
+    "kind": "Certificación"
+  },
+  {
+    "id": "ingles-b2",
+    "order": 3,
+    "title": "Curso de inglés (intermedio B2)",
+    "place": "English Now",
+    "year": "2025",
+    "kind": "Idiomas"
+  },
+  {
+    "id": "analisis-de-datos-power-bi",
+    "order": 4,
+    "title": "Curso de análisis de datos con Power BI",
+    "place": "Platzi",
+    "year": "2023",
+    "kind": "Curso"
+  },
+  {
+    "id": "servicios-en-la-nube-nodejs",
+    "order": 5,
+    "title": "Desarrollo de servicios en la nube con HTML5, JavaScript y Node.js",
+    "place": "Miriadax",
+    "year": "2015",
+    "kind": "Curso"
+  }
+]

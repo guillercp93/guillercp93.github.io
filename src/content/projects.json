@@ -1,0 +1,74 @@
+[
+  {
+    "id": "msi-performance-manager",
+    "order": 1,
+    "name": "MSI Performance Manager",
+    "description": "Gestor de rendimiento compatible con Wayland para portátiles gaming MSI: monitoreo de sensores en vivo, perfiles, límite de potencia de GPU y Cooler Boost, con escalamiento de privilegios vía Polkit.",
+    "stack": [
+      "Rust",
+      "Tauri 2",
+      "Preact",
+      "Linux"
+    ],
+    "repo": "https://github.com/guillercp93/msi-performance-manager"
+  },
+  {
+    "id": "htmltopdfdotnet",
+    "order": 2,
+    "name": "HtmlToPdfDotNet",
+    "description": "Librería para generar PDFs a partir de HTML directamente en .NET.",
+    "stack": [
+      "C#",
+      ".NET 10",
+      "PDF"
+    ],
+    "repo": "https://github.com/guillercp93/HtmlToPdfDotNet"
+  },
+  {
+    "id": "drrr",
+    "order": 3,
+    "name": "DRRR",
+    "description": "Chat web inspirado en el grupo Dollars de la serie Durarara!!, desplegado en Firebase.",
+    "stack": [
+      "TypeScript",
+      "Firebase"
+    ],
+    "repo": "https://github.com/guillercp93/DRRR",
+    "demo": "https://dollars-reactive.firebaseapp.com/"
+  },
+  {
+    "id": "music-player",
+    "order": 4,
+    "name": "Music Player",
+    "description": "Reproductor de música de escritorio multiplataforma para Windows, macOS y Linux.",
+    "stack": [
+      "TypeScript",
+      "Electron",
+      "React"
+    ],
+    "repo": "https://github.com/guillercp93/music-player"
+  },
+  {
+    "id": "castlevania-theme-for-omarchy",
+    "order": 5,
+    "name": "Castlevania Theme for Omarchy",
+    "description": "Tema para Omarchy inspirado en el videojuego Castlevania: Lament of Innocence.",
+    "stack": [
+      "CSS",
+      "Linux",
+      "Theming"
+    ],
+    "repo": "https://github.com/guillercp93/Castlevania-theme-omarchy"
+  },
+  {
+    "id": "kata-net-project",
+    "order": 6,
+    "name": "Kata .NET Project",
+    "description": "Solución a la prueba técnica de Kata Software construida con .NET.",
+    "stack": [
+      "C#",
+      ".NET"
+    ],
+    "repo": "https://github.com/guillercp93/KataDotnetProject"
+  }
+]

@@ -1,0 +1,109 @@
+[
+  {
+    "id": "siesa",
+    "order": 1,
+    "role": "Desarrollador Senior",
+    "company": "Siesa",
+    "period": "2026 – Actualidad",
+    "highlights": [
+      "Desarrollo de dos plataformas con asistencia de inteligencia artificial.",
+      "Plataforma de gestión de agentes de IA: el usuario crea su agente, le inyecta conocimiento y amplía sus capacidades con page tools y MCP tools.",
+      "Plataforma de gestión de datos de clientes: el usuario conecta sus fuentes de datos y genera reportes con la ayuda de un agente de IA."
+    ],
+    "stack": [
+      "React",
+      ".NET 10",
+      "PostgreSQL",
+      "Docker",
+      "Cube",
+      "MCP"
+    ]
+  },
+  {
+    "id": "kata-software",
+    "order": 2,
+    "role": "Technical Consultant",
+    "company": "Kata Software S.A.S",
+    "period": "2025 – 2026",
+    "highlights": [
+      "Implementación de la capa de servicios (middleware) para la comunicación entre Kata Mobile, Kata Engine y sistemas externos de clientes del sector financiero.",
+      "Integraciones con centrales de riesgo, servicios de validación de identidad y firma electrónica.",
+      "Consulta y envío de información hacia y desde sistemas internos de clientes.",
+      "Generación de documentos PDF para firma electrónica y reportes, y procesamiento básico de imágenes.",
+      "Despliegue en Azure App Services, con Azure Storage para archivos y Application Insights para monitoreo y logs."
+    ],
+    "stack": [
+      ".NET 8",
+      "C#",
+      "Azure App Services",
+      "Azure Storage",
+      "Application Insights"
+    ]
+  },
+  {
+    "id": "mawesi",
+    "order": 3,
+    "role": "Desarrollador Senior Full Stack",
+    "company": "Mawesi S.A.S",
+    "period": "2018 – 2024",
+    "highlights": [
+      "Soporte y mejora de la aplicación web de administración de solicitudes para una universidad.",
+      "Optimización del Sistema de Producción de una compañía farmacéutica, con cargue de información mediante DataStage e informes en Power BI y Excel.",
+      "Módulos de carga y transformación de datos con Pandas integrados en una aplicación Django, automatizando procesos manuales con una reducción de tiempos de alrededor del 70%.",
+      "Migración de soluciones de procesamiento de datos a Apache Airflow, mejorando la escalabilidad y el mantenimiento.",
+      "Procesos ETL en DataStage desde múltiples fuentes hacia distintos destinos, con ejecución programada o bajo demanda."
+    ],
+    "stack": [
+      "React",
+      "Laravel",
+      "PostgreSQL",
+      ".NET Framework",
+      "Oracle",
+      "Django",
+      "Pandas",
+      "Airflow",
+      "DataStage",
+      "Power BI"
+    ]
+  },
+  {
+    "id": "opal-group",
+    "order": 4,
+    "role": "Ingeniero de Desarrollo",
+    "company": "Opal Group S.A.S",
+    "period": "2017 – 2018",
+    "highlights": [
+      "Implementación del sistema CRM para nuevos clientes con Django, Oracle y MySQL, y AngularJS en la interfaz.",
+      "Módulo de gestión de proyectos: registro y cálculo de costos operativos y administrativos para una empresa constructora.",
+      "Módulo de paquetes configurables para agrupar jerárquicamente servicios e insumos, con interfaz en ReactJS."
+    ],
+    "stack": [
+      "Python",
+      "Django",
+      "Oracle",
+      "MySQL",
+      "AngularJS",
+      "React"
+    ]
+  },
+  {
+    "id": "nuevos-medios",
+    "order": 5,
+    "role": "Estudiante en prácticas",
+    "company": "Nuevos Medios S.A.S",
+    "period": "2015 – 2016",
+    "highlights": [
+      "Diagnóstico y solución de incidencias de la plataforma de aprendizaje en línea KME, mejorando su estabilidad y rendimiento.",
+      "Integración de videollamadas con Zoom y configuración de AWS CloudFront para streaming de video.",
+      "Migración visual de jQuery y Bootstrap a AngularJS con Material Design.",
+      "Módulo de interoperabilidad bajo el estándar LTI como trabajo de grado."
+    ],
+    "stack": [
+      "AngularJS",
+      "Material Design",
+      "AWS CloudFront",
+      "Zoom API",
+      "LTI"
+    ]
+  }
+]

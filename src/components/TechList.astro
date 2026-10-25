@@ -1,0 +1,31 @@
+---
+import TechIcon from '@/components/TechIcon.astro';
+
+interface Props {
+  items: string[];
+}
+
+const { items } = Astro.props;
+---
+
+<ul class="stack" aria-label="Tecnologías">
+  {
+    items.map((tech) => (
+      <li class="chip">
+        <TechIcon name={tech} />
+        {tech}
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .stack {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+</style>

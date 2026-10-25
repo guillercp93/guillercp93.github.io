@@ -1,5 +1,9 @@
 ---
-import { profile, stats } from '../data/profile';
+import { profile, stats } from '@/data/profile';
+import { getCollection } from 'astro:content';
+
+const companies = { value: String((await getCollection('experience')).length), label: 'empresas' };
+const allStats = [...stats.slice(0, 1), companies, ...stats.slice(1)];
 ---
 
 <section id="sobre-mi" class="section">
@@ -15,7 +19,7 @@ import { profile, stats } from '../data/profile';
       </div>
       <ul class="stats reveal">
         {
-          stats.map((stat) => (
+          allStats.map((stat) => (
             <li class="card">
               <strong class="gradient-text">{stat.value}</strong>
               <span>{stat.label}</span>

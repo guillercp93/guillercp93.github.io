@@ -1,8 +1,8 @@
 ---
-import Icon from './Icon.astro';
-import { profile } from '../data/profile';
-
-const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+import { Image } from 'astro:assets';
+import Icon from '@/components/Icon.astro';
+import { profile } from '@/data/profile';
+import { withBase } from '@/utils/url';
 ---
 
 <section id="inicio" class="hero">
@@ -23,7 +23,7 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
         {profile.location}
       </p>
       <div class="actions">
-        <a class="btn btn-primary" href={`${base}${profile.cv}`} download>
+        <a class="btn btn-primary" href={withBase(profile.cv)} download>
           <Icon name="download" /> Descargar CV
         </a>
         <a class="btn btn-ghost" href="#contacto">
@@ -45,7 +45,7 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 
     <div class="hero-visual reveal">
       <div class="avatar-ring">
-        <img src={profile.avatar} alt={`Foto de ${profile.shortName}`} width="160" height="160" />
+        <Image src={`${profile.avatar}?s=300`} alt={`Foto de ${profile.shortName}`} width={150} height={150} loading="eager" />
       </div>
       <div class="code card" aria-hidden="true">
         <div class="code-bar">

@@ -1,6 +1,8 @@
 ---
-import TechIcon from './TechIcon.astro';
-import { experience } from '../data/profile';
+import TechList from '@/components/TechList.astro';
+import { getOrdered } from '@/utils/content';
+
+const jobs = await getOrdered('experience');
 ---
 
 <section id="experiencia" class="section">
@@ -11,7 +13,7 @@ import { experience } from '../data/profile';
     </div>
     <ol class="timeline">
       {
-        experience.map((job, index) => (
+        jobs.map(({ data: job }, index) => (
           <li class="item reveal">
             <span class:list={['marker', { current: index === 0 }]} aria-hidden="true" />
             <article class="card job">
@@ -27,14 +29,9 @@ import { experience } from '../data/profile';
                   <li>{item}</li>
                 ))}
               </ul>
-              <ul class="stack" aria-label="Tecnologías">
-                {job.stack.map((tech) => (
-                  <li class="chip">
-                    <TechIcon name={tech} />
-                    {tech}
-                  </li>
-                ))}
-              </ul>
+              <div class="tech">
+                <TechList items={job.stack} />
+              </div>
             </article>
           </li>
         ))
@@ -87,7 +84,7 @@ import { experience } from '../data/profile';
 
   .job {
     padding: 24px;
-    transition: border-color 0.25s ease, transform 0.25s ease;
+    transition: border-color 0.25s ease;
   }
 
   .job:hover {
@@ -135,12 +132,7 @@ import { experience } from '../data/profile';
     color: var(--accent-2);
   }
 
-  .stack {
-    list-style: none;
-    margin: 18px 0 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+  .tech {
+    margin-top: 18px;
   }
 </style>

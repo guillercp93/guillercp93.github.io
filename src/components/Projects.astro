@@ -1,7 +1,10 @@
 ---
-import Icon from './Icon.astro';
-import TechIcon from './TechIcon.astro';
-import { profile, projects } from '../data/profile';
+import Icon from '@/components/Icon.astro';
+import TechList from '@/components/TechList.astro';
+import { profile } from '@/data/profile';
+import { getOrdered } from '@/utils/content';
+
+const projects = await getOrdered('projects');
 ---
 
 <section id="proyectos" class="section">
@@ -12,7 +15,7 @@ import { profile, projects } from '../data/profile';
     </div>
     <ul class="grid">
       {
-        projects.map((project) => (
+        projects.map(({ data: project }) => (
           <li class="reveal">
             <article class="card project">
               <div class="top">
@@ -34,14 +37,7 @@ import { profile, projects } from '../data/profile';
                 </a>
               </h3>
               <p>{project.description}</p>
-              <ul class="stack" aria-label="Tecnologías">
-                {project.stack.map((tech) => (
-                  <li class="chip">
-                    <TechIcon name={tech} />
-                    {tech}
-                  </li>
-                ))}
-              </ul>
+              <TechList items={project.stack} />
             </article>
           </li>
         ))
@@ -140,15 +136,6 @@ import { profile, projects } from '../data/profile';
     color: var(--muted);
     font-size: 0.95rem;
     flex-grow: 1;
-  }
-
-  .stack {
-    list-style: none;
-    margin: 4px 0 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
   }
 
   .more {

@@ -1,6 +1,8 @@
 ---
-import TechIcon from './TechIcon.astro';
-import { skills } from '../data/profile';
+import TechIcon from '@/components/TechIcon.astro';
+import { getOrdered } from '@/utils/content';
+
+const skills = await getOrdered('skills');
 ---
 
 <section id="habilidades" class="section">
@@ -11,7 +13,7 @@ import { skills } from '../data/profile';
     </div>
     <div class="groups">
       {
-        skills.map((group) => (
+        skills.map(({ data: group }) => (
           <div class="card group reveal">
             <h3>{group.group}</h3>
             <ul>

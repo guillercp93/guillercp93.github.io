@@ -1,0 +1,69 @@
+[
+  {
+    "id": "lenguajes",
+    "order": 1,
+    "group": "Lenguajes",
+    "items": [
+      "Python",
+      "JavaScript",
+      "TypeScript",
+      "C#",
+      "PHP"
+    ]
+  },
+  {
+    "id": "frameworks-y-librerias",
+    "order": 2,
+    "group": "Frameworks y librerías",
+    "items": [
+      "Django",
+      "React",
+      ".NET Core",
+      "Laravel",
+      "Node.js"
+    ]
+  },
+  {
+    "id": "bases-de-datos",
+    "order": 3,
+    "group": "Bases de datos",
+    "items": [
+      "Oracle",
+      "PostgreSQL",
+      "SQL Server",
+      "MySQL"
+    ]
+  },
+  {
+    "id": "procesamiento-de-datos",
+    "order": 4,
+    "group": "Procesamiento de datos",
+    "items": [
+      "DataStage",
+      "Pandas",
+      "NumPy",
+      "Apache Airflow",
+      "Cube"
+    ]
+  },
+  {
+    "id": "cloud-devops-y-bi",
+    "order": 5,
+    "group": "Cloud, DevOps y BI",
+    "items": [
+      "Azure",
+      "AWS CloudFront",
+      "Docker",
+      "Power BI"
+    ]
+  },
+  {
+    "id": "inteligencia-artificial",
+    "order": 6,
+    "group": "Inteligencia artificial",
+    "items": [
+      "Agentes de IA",
+      "MCP"
+    ]
+  }
+]

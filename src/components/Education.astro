@@ -1,5 +1,7 @@
 ---
-import { education } from '../data/profile';
+import { getOrdered } from '@/utils/content';
+
+const education = await getOrdered('education');
 ---
 
 <section id="formacion" class="section">
@@ -10,7 +12,7 @@ import { education } from '../data/profile';
     </div>
     <ul class="list">
       {
-        education.map((entry) => (
+        education.map(({ data: entry }) => (
           <li class="card entry reveal">
             <span class="year">{entry.year}</span>
             <div>

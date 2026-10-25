@@ -15,8 +15,13 @@ npm run preview
 
 ## Updating content
 
-All content (profile, experience, projects, skills, education) lives in
-`src/data/profile.ts`. The downloadable CV is `public/cv-guillermo-castillo.pdf`.
+- Experience, projects, skills and education are content collections in `src/content/*.json`,
+  validated by the schemas in `src/content.config.ts`. Entries are sorted by `order`.
+- Profile data and stats live in `src/data/profile.ts`.
+- Technology icons are mapped in `src/data/tech-icons.ts`.
+- The downloadable CV is `public/cv-guillermo-castillo.pdf`.
+
+`npm run build` type-checks the project (`astro check`) before building.
 
 ## Deployment
 
