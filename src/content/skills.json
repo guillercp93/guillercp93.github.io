@@ -2,7 +2,10 @@
   {
     "id": "lenguajes",
     "order": 1,
-    "group": "Lenguajes",
+    "group": {
+      "es": "Lenguajes",
+      "en": "Languages"
+    },
     "items": [
       "Python",
       "JavaScript",
@@ -14,7 +17,10 @@
   {
     "id": "frameworks-y-librerias",
     "order": 2,
-    "group": "Frameworks y librerías",
+    "group": {
+      "es": "Frameworks y librerías",
+      "en": "Frameworks & libraries"
+    },
     "items": [
       "Django",
       "React",
@@ -26,7 +32,10 @@
   {
     "id": "bases-de-datos",
     "order": 3,
-    "group": "Bases de datos",
+    "group": {
+      "es": "Bases de datos",
+      "en": "Databases"
+    },
     "items": [
       "Oracle",
       "PostgreSQL",
@@ -37,7 +46,10 @@
   {
     "id": "procesamiento-de-datos",
     "order": 4,
-    "group": "Procesamiento de datos",
+    "group": {
+      "es": "Procesamiento de datos",
+      "en": "Data processing"
+    },
     "items": [
       "DataStage",
       "Pandas",
@@ -49,7 +61,10 @@
   {
     "id": "cloud-devops-y-bi",
     "order": 5,
-    "group": "Cloud, DevOps y BI",
+    "group": {
+      "es": "Cloud, DevOps y BI",
+      "en": "Cloud, DevOps & BI"
+    },
     "items": [
       "Azure",
       "AWS CloudFront",
@@ -60,9 +75,15 @@
   {
     "id": "inteligencia-artificial",
     "order": 6,
-    "group": "Inteligencia artificial",
+    "group": {
+      "es": "Inteligencia artificial",
+      "en": "Artificial intelligence"
+    },
     "items": [
-      "Agentes de IA",
+      {
+        "es": "Agentes de IA",
+        "en": "AI agents"
+      },
       "MCP"
     ]
   }

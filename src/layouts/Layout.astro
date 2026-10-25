@@ -3,19 +3,17 @@ import '@fontsource-variable/inter';
 import '@fontsource-variable/jetbrains-mono';
 import '@/styles/global.css';
 import { withBase } from '@/utils/url';
+import { getAbsoluteLocaleUrl } from 'astro:i18n';
 import { profile } from '@/data/profile';
+import { defaultLocale, locales, toLocale, useTranslations } from '@/i18n/utils';
 
-interface Props {
-  title: string;
-  description: string;
-}
-
-const { title, description } = Astro.props;
-const canonical = new URL(Astro.url.pathname, Astro.site);
+const locale = toLocale(Astro.currentLocale);
+const { title, description, ogLocale } = useTranslations(locale).meta;
+const canonical = getAbsoluteLocaleUrl(locale);
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={locale}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -23,7 +21,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta name="theme-color" content="#070b14" />
     <link rel="icon" type="image/svg+xml" href={withBase('favicon.svg')} />
     <link rel="canonical" href={canonical} />
+    {locales.map((l) => <link rel="alternate" hreflang={l} href={getAbsoluteLocaleUrl(l)} />)}
+    <link rel="alternate" hreflang="x-default" href={getAbsoluteLocaleUrl(defaultLocale)} />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content={ogLocale} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />

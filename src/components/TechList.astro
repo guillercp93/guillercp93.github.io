@@ -1,19 +1,22 @@
 ---
 import TechIcon from '@/components/TechIcon.astro';
+import { localize, toLocale, useTranslations, type Localized } from '@/i18n/utils';
 
 interface Props {
-  items: string[];
+  items: Localized[];
 }
 
 const { items } = Astro.props;
+const locale = toLocale(Astro.currentLocale);
+const t = useTranslations(locale);
 ---
 
-<ul class="stack" aria-label="Tecnologías">
+<ul class="stack" aria-label={t.tech}>
   {
     items.map((tech) => (
       <li class="chip">
-        <TechIcon name={tech} />
-        {tech}
+        <TechIcon name={localize(tech, 'es')} />
+        {localize(tech, locale)}
       </li>
     ))
   }

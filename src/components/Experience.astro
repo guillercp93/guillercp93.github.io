@@ -1,15 +1,19 @@
 ---
 import TechList from '@/components/TechList.astro';
 import { getOrdered } from '@/utils/content';
+import { localize, toLocale, useTranslations } from '@/i18n/utils';
+
+const locale = toLocale(Astro.currentLocale);
+const t = useTranslations(locale);
 
 const jobs = await getOrdered('experience');
 ---
 
-<section id="experiencia" class="section">
+<section id={t.ids.experience} class="section">
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">02 · experiencia</p>
-      <h2 class="section-title">Trayectoria profesional</h2>
+      <p class="eyebrow">{t.experience.eyebrow}</p>
+      <h2 class="section-title">{t.experience.title}</h2>
     </div>
     <ol class="timeline">
       {
@@ -19,13 +23,13 @@ const jobs = await getOrdered('experience');
             <article class="card job">
               <header>
                 <div>
-                  <h3>{job.role}</h3>
+                  <h3>{localize(job.role, locale)}</h3>
                   <p class="company">{job.company}</p>
                 </div>
-                <span class="period">{job.period}</span>
+                <span class="period">{localize(job.period, locale)}</span>
               </header>
               <ul class="highlights">
-                {job.highlights.map((item) => (
+                {job.highlights[locale].map((item) => (
                   <li>{item}</li>
                 ))}
               </ul>

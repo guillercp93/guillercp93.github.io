@@ -2,27 +2,30 @@
 import Icon from '@/components/Icon.astro';
 import { profile } from '@/data/profile';
 import { withBase } from '@/utils/url';
+import { localize, toLocale, useTranslations } from '@/i18n/utils';
+
+const locale = toLocale(Astro.currentLocale);
+const t = useTranslations(locale);
 ---
 
-<section id="contacto" class="section">
+<section id={t.ids.contact} class="section">
   <div class="container">
     <div class="card cta reveal">
-      <p class="eyebrow">06 · contacto</p>
-      <h2 class="section-title">¿Construimos algo <span class="gradient-text">juntos</span>?</h2>
-      <p class="lead">
-        ¿Tienes un proyecto, una propuesta o simplemente quieres conversar? Escríbeme y te respondo
-        lo antes posible.
-      </p>
+      <p class="eyebrow">{t.contact.eyebrow}</p>
+      <h2 class="section-title">
+        {t.contact.titleStart} <span class="gradient-text">{t.contact.titleAccent}</span>{t.contact.titleEnd}
+      </h2>
+      <p class="lead">{t.contact.lead}</p>
       <a class="email" href={`mailto:${profile.email}`}>{profile.email}</a>
       <div class="actions">
         <a class="btn btn-primary" href={`mailto:${profile.email}`}>
-          <Icon name="mail" /> Enviar correo
+          <Icon name="mail" /> {t.contact.send}
         </a>
         <a class="btn btn-ghost" href={profile.linkedin} target="_blank" rel="noopener noreferrer">
           <Icon name="linkedin" /> LinkedIn
         </a>
-        <a class="btn btn-ghost" href={withBase(profile.cv)} download>
-          <Icon name="download" /> Hoja de vida
+        <a class="btn btn-ghost" href={withBase(localize(profile.cv, locale))} download>
+          <Icon name="download" /> {t.contact.cv}
         </a>
       </div>
     </div>

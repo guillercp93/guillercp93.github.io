@@ -2,10 +2,16 @@
   {
     "id": "ingenieria-de-sistemas",
     "order": 1,
-    "title": "Ingeniería de Sistemas",
+    "title": {
+      "es": "Ingeniería de Sistemas",
+      "en": "Systems Engineering"
+    },
     "place": "Universidad del Valle",
     "year": "2017",
-    "kind": "Formación académica"
+    "kind": {
+      "es": "Formación académica",
+      "en": "Degree"
+    }
   },
   {
     "id": "ibm-full-stack-developer",
@@ -13,30 +19,51 @@
     "title": "IBM Full Stack Software Developer Certificate",
     "place": "IBM · Coursera",
     "year": "2025",
-    "kind": "Certificación"
+    "kind": {
+      "es": "Certificación",
+      "en": "Certification"
+    }
   },
   {
     "id": "ingles-b2",
     "order": 3,
-    "title": "Curso de inglés (intermedio B2)",
+    "title": {
+      "es": "Curso de inglés (intermedio B2)",
+      "en": "English course (B2 intermediate)"
+    },
     "place": "English Now",
     "year": "2025",
-    "kind": "Idiomas"
+    "kind": {
+      "es": "Idiomas",
+      "en": "Languages"
+    }
   },
   {
     "id": "analisis-de-datos-power-bi",
     "order": 4,
-    "title": "Curso de análisis de datos con Power BI",
+    "title": {
+      "es": "Curso de análisis de datos con Power BI",
+      "en": "Power BI Data Analysis Course"
+    },
     "place": "Platzi",
     "year": "2023",
-    "kind": "Curso"
+    "kind": {
+      "es": "Curso",
+      "en": "Course"
+    }
   },
   {
     "id": "servicios-en-la-nube-nodejs",
     "order": 5,
-    "title": "Desarrollo de servicios en la nube con HTML5, JavaScript y Node.js",
+    "title": {
+      "es": "Desarrollo de servicios en la nube con HTML5, JavaScript y Node.js",
+      "en": "Cloud Services Development with HTML5, JavaScript and Node.js"
+    },
     "place": "Miriadax",
     "year": "2015",
-    "kind": "Curso"
+    "kind": {
+      "es": "Curso",
+      "en": "Course"
+    }
   }
 ]

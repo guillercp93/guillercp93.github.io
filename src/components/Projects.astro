@@ -3,15 +3,19 @@ import Icon from '@/components/Icon.astro';
 import TechList from '@/components/TechList.astro';
 import { profile } from '@/data/profile';
 import { getOrdered } from '@/utils/content';
+import { localize, toLocale, useTranslations } from '@/i18n/utils';
+
+const locale = toLocale(Astro.currentLocale);
+const t = useTranslations(locale);
 
 const projects = await getOrdered('projects');
 ---
 
-<section id="proyectos" class="section">
+<section id={t.ids.projects} class="section">
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">03 · proyectos</p>
-      <h2 class="section-title">Proyectos personales</h2>
+      <p class="eyebrow">{t.projects.eyebrow}</p>
+      <h2 class="section-title">{t.projects.title}</h2>
     </div>
     <ul class="grid">
       {
@@ -21,11 +25,11 @@ const projects = await getOrdered('projects');
               <div class="top">
                 <span class="folder" aria-hidden="true">{'{ }'}</span>
                 <div class="links">
-                  <a href={project.repo} target="_blank" rel="noopener noreferrer" aria-label={`Código de ${project.name} en GitHub`}>
+                  <a href={project.repo} target="_blank" rel="noopener noreferrer" aria-label={`${t.projects.code} ${project.name}`}>
                     <Icon name="github" />
                   </a>
                   {project.demo && (
-                    <a href={project.demo} target="_blank" rel="noopener noreferrer" aria-label={`Ver demo de ${project.name}`}>
+                    <a href={project.demo} target="_blank" rel="noopener noreferrer" aria-label={`${t.projects.demo} ${project.name}`}>
                       <Icon name="external" />
                     </a>
                   )}
@@ -36,7 +40,7 @@ const projects = await getOrdered('projects');
                   {project.name}
                 </a>
               </h3>
-              <p>{project.description}</p>
+              <p>{localize(project.description, locale)}</p>
               <TechList items={project.stack} />
             </article>
           </li>
@@ -45,7 +49,7 @@ const projects = await getOrdered('projects');
     </ul>
     <div class="more reveal">
       <a class="btn btn-ghost" href={profile.github} target="_blank" rel="noopener noreferrer">
-        <Icon name="github" /> Ver más en GitHub
+        <Icon name="github" /> {t.projects.more}
       </a>
     </div>
   </div>

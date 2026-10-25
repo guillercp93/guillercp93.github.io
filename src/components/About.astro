@@ -1,28 +1,32 @@
 ---
 import { profile, stats } from '@/data/profile';
 import { getCollection } from 'astro:content';
+import { localize, toLocale, useTranslations } from '@/i18n/utils';
 
-const companies = { value: String((await getCollection('experience')).length), label: 'empresas' };
+const locale = toLocale(Astro.currentLocale);
+const t = useTranslations(locale);
+
+const companies = { value: String((await getCollection('experience')).length), label: t.about.companies };
 const allStats = [...stats.slice(0, 1), companies, ...stats.slice(1)];
 ---
 
-<section id="sobre-mi" class="section">
+<section id={t.ids.about} class="section">
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">01 · sobre mí</p>
-      <h2 class="section-title">Software que mejora la productividad</h2>
+      <p class="eyebrow">{t.about.eyebrow}</p>
+      <h2 class="section-title">{t.about.title}</h2>
     </div>
     <div class="about-grid">
       <div class="text reveal">
-        <p>{profile.summary}</p>
-        <p>{profile.strengths}</p>
+        <p>{localize(profile.summary, locale)}</p>
+        <p>{localize(profile.strengths, locale)}</p>
       </div>
       <ul class="stats reveal">
         {
           allStats.map((stat) => (
             <li class="card">
               <strong class="gradient-text">{stat.value}</strong>
-              <span>{stat.label}</span>
+              <span>{localize(stat.label, locale)}</span>
             </li>
           ))
         }

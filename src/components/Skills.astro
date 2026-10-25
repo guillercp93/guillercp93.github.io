@@ -1,26 +1,30 @@
 ---
 import TechIcon from '@/components/TechIcon.astro';
 import { getOrdered } from '@/utils/content';
+import { localize, toLocale, useTranslations } from '@/i18n/utils';
+
+const locale = toLocale(Astro.currentLocale);
+const t = useTranslations(locale);
 
 const skills = await getOrdered('skills');
 ---
 
-<section id="habilidades" class="section">
+<section id={t.ids.skills} class="section">
   <div class="container">
     <div class="section-head reveal">
-      <p class="eyebrow">04 · habilidades</p>
-      <h2 class="section-title">Stack tecnológico</h2>
+      <p class="eyebrow">{t.skills.eyebrow}</p>
+      <h2 class="section-title">{t.skills.title}</h2>
     </div>
     <div class="groups">
       {
         skills.map(({ data: group }) => (
           <div class="card group reveal">
-            <h3>{group.group}</h3>
+            <h3>{localize(group.group, locale)}</h3>
             <ul>
               {group.items.map((item) => (
                 <li>
-                  <TechIcon name={item} />
-                  {item}
+                  <TechIcon name={localize(item, 'es')} />
+                  {localize(item, locale)}
                 </li>
               ))}
             </ul>
